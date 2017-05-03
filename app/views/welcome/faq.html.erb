@@ -1,0 +1,50 @@
+<% content_for :title do %>
+  <title>Frequently Asked Questions</title>
+<% end %>
+
+<% if Rails.env.development? %>
+    <!-- app/views/welcome/faq.html.erb -->
+<% end %>
+
+<div class="jumbotron">
+	
+	<div class="container">
+		
+		<h1>Frequently Asked Questions</h1>
+		
+	</div>
+	
+</div>
+
+	<div class="container">
+		
+		<% if @disclaimers.size > 0 %>
+			<h2>Disclaimers</h2>
+		
+			<ul>
+				<% for @item in @disclaimers %>
+					<li><%= @item.message %></li>
+				<% end %>
+			</ul>
+			<hr>
+		<% end %>
+		
+		<h2> How long will it take for my boots to get here? </h2>
+		<p> It will take around 4-6 months for you to get your boots after payment.</p>
+		
+		<h2> What sizes and styles are boots available in? </h2>
+		<p> Sizes come in 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, and 10.5. Styles 
+		include square toe and pointed toe. You can also get bling on the Aggie mom 
+		logo.</p>
+		
+		<h2> Where are the boots made?  </h2>
+		<p> All boots are made in Texas! </p>
+		
+		<hr>
+		
+		<p> If you have any other questions, please email us at 
+		<a href="mailto:aggiemomboots@gmail.com">aggiemomboots@gmail.com</a>.</p>
+		
+	</div>
+	
+

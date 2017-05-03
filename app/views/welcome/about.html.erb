@@ -1,0 +1,107 @@
+<% content_for :title do %>
+  <title>About Us</title>
+<% end %>
+
+<% if Rails.env.development? %>
+    <!-- app/views/welcome/about.html.erb -->
+<% end %>
+
+<div class="jumbotron">
+	
+	<div class="container">
+	
+		<h1>About Us</h1>
+		
+		<p>To start, we love Texas A&amp;M!</p>
+
+		<p>Contact Us</p>
+		
+		<a href="http://www.facebook.com/pages/Aggie-Mom-Boots/125128084255379" target="_blank">
+			<%= image_tag "logo_facebook.png", :class => "img-fluid crop-img", :alt => "Parker County Aggie Mom's Club Facebook page" %>
+		</a>
+		
+		<a href="mailto:aggiemomboots@gmail.com" target="_blank">
+			<%= image_tag "logo_gmail.png", :class => "img-fluid crop-img", :alt => "Parker County Aggie Mom's Club email address" %>
+		</a>
+
+	</div>
+  
+</div>
+
+<div class="container">
+	
+	<% if @disclaimers.size > 0 %>
+		<h2>Disclaimers</h2>
+	
+		<ul>
+			<% for @item in @disclaimers %>
+				<li><%= @item.message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+		
+	<div class="row">
+		
+		<div class="col-md-4">
+			
+			<div class="panel">
+				
+				<center>
+					<%= image_tag "graduation_cap.png", :class => "img-fluid card-img-top", :alt => "Graduation cap" %>
+				</center>
+				
+				<div>
+					
+					<h2>Scholarships</h2>
+					
+					<p>A great thing about our organization is that with every boot purchased proceeds will be used to provide scholarships!</p>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="col-md-4">
+			
+			<div class="panel">
+				
+				<center>
+					<%= image_tag "logo_pcam.png", :class => "img-fluid card-img-top", :alt => "Logo of the Parker County Aggie Mom's Club" %>
+				</center>
+				
+				<div>
+					
+					<h2>Support</h2>
+					
+					<p>As a club, we are here to support other Aggie Moms and our Aggies!</p>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="col-md-4">
+			
+			<div class="panel">
+				
+				<center>
+					<%= image_tag "logo_tamu.png", :class => "img-fluid card-img-top", :alt => "Logo of Texas A&M University" %>
+				</center>
+				
+				<div>
+					
+					<h2>School Spirit</h2>
+					
+					<p>Why else would you buy our products if it were not for the fact that our boots are made with the official logos engraved onto it so that you can represent your Aggies!</p>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+</div>

@@ -1,0 +1,89 @@
+<% content_for :title do %>
+  <title>Product</title>
+<% end %>
+
+<script src="https://cdn.sq-api.com/market/embed.js" id="sq-embed-js" charset="utf-8"></script>
+
+<div class="jumbotron">
+	
+	<div class="container">
+		
+	    <h1>Products</h1>
+		
+	</div>
+	
+</div>
+
+<div class ="container">
+  <% if @disclaimers.size > 0 %>
+		<h2>Disclaimers</h2>
+	
+		<ul>
+			<% for @item in @disclaimers %>
+				<li><%= @item.message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+    <div class="row" id="productsWrap"></div>
+    <div id="test"></div>
+  
+	<% if @reviews.size > 0 %>
+      <h2>Reviews</h2>
+      <% @reviews.each do |review| %>
+          <p>
+              "<%= review.comment %>" - <strong><%= review.name %></strong>
+          </p>
+      <% end %>
+  <% end %>
+</div>
+
+
+<script>
+    
+    $(document).on("turbolinks:load", function() {
+        
+        
+        <%
+                
+          require 'open-uri'
+        
+          url = 'https://squareup.com/store/aggie-moms/'
+          fh = open(url)
+          html = fh.read
+          @j = 0
+          @items = html.scan( /slug&quot;:&quot;([^&]*)&quot;,&quot;is_unique&quot;/)
+        
+        %>
+
+        
+        
+          var html = '';
+          var colSize = '';
+          var item_list = <%=raw @items %>;
+          if(item_list.length < 4) {
+              colSize = "col-md-" + item_list.length;
+          } else {
+              colSize = "col-md-3";
+          }
+      
+          html += "<div class=\"row\">";
+          for(var i=0; i < item_list.length; i++) {
+            
+            // Check to see if new row needs to be added
+            if(i%4 == 0 && i>1) {
+              html += "</div><div class='row'>";
+            }
+            
+            // Add each item
+            html += "<div class='" + colSize + "'><a href='https://squareup.com/market/aggie-moms/" + item_list[i][0] + "' class='sq-embed-item item'> Test</a></div>";
+          }
+          html += "</div>"
+          
+          // Set the products page with the generated html
+          $('#productsWrap').html(html);    
+        
+        
+    })
+
+
+</script>

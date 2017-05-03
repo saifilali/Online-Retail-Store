@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+/* Override Bootstrap's h1 */
+h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 5em;
+}
+
+/* Override Bootstrap's jumbotron */
+.jumbotron {
+  text-align: center;
+}
+
+/* Override Bootstrap's navbar logo for FireFox bug */
+.navbar-brand {
+  padding: 0px;
+}
+
+/* Override Bootstrap's navbar logo to resize to the size of the navbar */
+.navbar-brand>img {
+  height: 100%;
+  width: auto;
+}
+
+.card-img-top {
+  width: auto;
+  height: 200px;
+  /*margin-left: 22%;*/
+  text-align: center;
+}
+
+/* Images that are the same size */
+.crop {
+    height: 50px;
+    width: 50px;
+}
+
+.crop-img {
+    height: 50px;
+    width: 50px;
+}
+
+.welcome h2 {
+  font-size: 2.5em;
+}
+
+/* Home Page */
+.intro p{
+  font-size: 1.35em;
+  width: 75%;
+  margin: 1em auto;
+  text-align: left;
+}
+
+/* Back to top button */
+#bt {
+  background-color:#333;
+  position:fixed;
+  bottom:2px;
+  right:2px;
+  width:60px;
+  text-align:center;
+  /*padding:2px 0;*/
+  margin:15px;
+  opacity:.6;
+  line-height:20px;
+  z-index: 50;
+  color:white !important;
+  font-size:1em ;
+}
+

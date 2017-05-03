@@ -1,0 +1,17 @@
+do not run rspec. some rspec tests were created out of generating 
+models and controllers. instead run these tests
+
+
+WARNING: BEFORE you run the tests make sure to run this command:
+rake db:seed RAILS_ENV=test --trace 
+(this will seed the test.db,
+allowing the sign in and sign out specs to work) 
+
+Then you can test every Rspec test by typing these commands:
+
+rspec spec/features/home_spec.rb
+rspec spec/requests/disclaimers_spec.rb
+rspec spec/features/signin_spec.rb
+rspec spec/features/signout_spec.rb
+rspec spec/features/signin_fail_spec.rb
+

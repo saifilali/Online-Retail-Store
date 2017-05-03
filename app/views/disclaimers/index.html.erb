@@ -1,0 +1,38 @@
+<% content_for :title do %>
+    <title>Disclaimers</title>
+<% end %>
+
+<div class='container'>
+
+  <p id="notice"><%= notice %></p>
+  
+  <h1>Listing Disclaimers</h1>
+  
+  <table class='table table-striped table-bordered'>
+    <thead>
+      <tr>
+        <th>Message</th>
+        <th>Page</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @disclaimers.each do |disclaimer| %>
+        <tr>
+          <td><%= disclaimer.message %></td>
+          <td><%= disclaimer.page %></td>
+          <td class='text-center'><%= link_to 'Show', disclaimer, :class => 'btn btn-default' %></td>
+          <td class='text-center'><%= link_to 'Edit', edit_disclaimer_path(disclaimer), :class => 'btn btn-default' %></td>
+          <td class='text-center'><%= link_to 'Destroy', disclaimer, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <hr>
+  
+  <%= link_to 'New Disclaimer', new_disclaimer_path, :class => 'btn btn-default' %> |
+  <%= link_to 'Back to Admin Panel', welcome_admin_path, :class => 'btn btn-default' %>
+
+</div>

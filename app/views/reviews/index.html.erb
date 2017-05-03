@@ -1,0 +1,38 @@
+<% content_for :title do %>
+    <title>Reviews</title>
+<% end %>
+
+<div class='container'>
+  
+  <p id="notice"><%= notice %></p>
+  
+  <h1>Listing Reviews</h1>
+  
+  <table class='table table-striped table-bordered'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Comment</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @reviews.each do |review| %>
+        <tr>
+          <td><%= review.name %></td>
+          <td><%= review.comment %></td>
+          <td class='text-center'><%= link_to 'Show', review, :class => 'btn btn-default' %></td>
+          <td class='text-center'><%= link_to 'Edit', edit_review_path(review), :class => 'btn btn-default' %></td>
+          <td class='text-center'><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <hr>
+  
+  <%= link_to 'New Review', new_review_path, :class => 'btn btn-default' %> |
+  <%= link_to 'Back to Admin Panel', welcome_admin_path, :class => 'btn btn-default' %>
+
+</div>

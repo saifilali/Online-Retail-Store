@@ -1,0 +1,24 @@
+.carousel {
+
+}
+
+.carousel-inner {
+  height: 100%;
+  max-width: 600px !important;
+  .img {
+    margin: auto;
+  }
+}
+
+.carousel-indicators {
+  li {
+    border: 1px solid white;
+  }
+  .active {
+    background-color: white;
+  }
+}
+
+.pad {
+  padding-bottom: 25px;
+}

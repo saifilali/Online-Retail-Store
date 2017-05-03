@@ -1,0 +1,46 @@
+<% content_for :title do %>
+    <title>Home Page</title>
+<% end %>
+
+<% if Rails.env.development? %>
+    <!-- app/views/welcome/index.html.erb -->
+<% end %>
+
+<div class="jumbotron">
+	
+	<div class="container welcome">
+		
+		<h1>Aggie Mom Boots</h1>
+		
+		<h2>by the Parker County Aggie Moms' Club</h2>
+		
+	</div>
+	
+</div>
+
+<div class="container">
+	<% if @disclaimers.size > 0 %>
+			<h2>Disclaimers</h2>
+		
+			<ul>
+				<% for @item in @disclaimers %>
+					<li><%= @item.message %></li>
+				<% end %>
+			</ul>
+		<% end %>
+	<div class="text-center intro">
+		
+	
+    	
+    	<%= image_tag "PCAM_boutique.jpg", :class => "img-fluid", :width => "75%", :alt => "A picture of Aggie Mom cowboy boots" %>
+
+       	<p>Since 2005 our Aggie Moms' Club has been raising money for A&amp;M student scholarships
+       	- every purchase of these boots serve that cause. Sold <em>exclusively</em> exclusively by the Parker County Aggie
+       	Moms since 2011, genuine leather is used to make these boots <strong>one-of-a-kind</strong>.</p>
+    	
+    	<p>Show off your Aggie Spirit whether you are at the game, a tailgate, or grabbing dinner at The Chicken - these genuine leather boots are truely Rough, Tough, Real Stuff!</p>
+    	
+    	<p style="text-align:center;font-weight:bold;">These boots are part of an Aggie Tradition, so don't wait to order! Thanks &amp; Gig 'em!</p>
+    </div>	
+
+</div>

@@ -1,0 +1,15 @@
+<% content_for :title do %>
+    <title>New Review</title>
+<% end %>
+
+<div class='container'>
+
+    <h1> New Review </h1>
+    
+    <%= render 'form' %>
+    
+    <hr>
+    
+    <%= link_to 'Back', reviews_path, :class => 'btn btn-default' %>
+
+</div>

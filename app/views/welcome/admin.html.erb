@@ -1,0 +1,25 @@
+<% content_for :title do %>
+    <title>Administrator Panel</title>
+<% end %>
+
+<div class='container'>
+    
+    <h1>Administrator Panel</h1>
+    
+    <ul class='list-group'>
+
+        <li class='list-group-item'>
+        
+            <%= link_to "Add Review", reviews_path %>
+        
+        </li>
+        
+        <li class='list-group-item'>
+        
+            <%= link_to "Add Disclaimer", disclaimers_path %>
+        
+        </li>
+    
+    </ul>
+
+</div>

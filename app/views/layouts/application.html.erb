@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<% if Rails.env.development? %>
+  <!-- app/views/layouts/application.html.erb -->
+<% end %>
+
+<html>
+  
+  <head>
+    
+    <!-- Page title -->
+    <% if content_for?(:title) %>
+    
+      <%= content_for(:title) %>
+      
+    <% else %>
+    
+      <title>Default title</title>
+      
+    <% end %>
+    
+    <!-- Cascading Style Sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    
+    <!-- Javascript -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <%= csrf_meta_tags %>
+    
+  </head>
+  
+  <body>
+   
+    <header>
+      
+      <%# Navigation bar %>
+      <%= render "layouts/navbar" %>
+      
+      <% if alert %>  <div class="alert alert-warning"><%= alert %></div><% end %>
+    
+    </header>
+    
+    <%# Start main page content %>
+    <%= yield %>
+  
+    <footer>
+      
+      <div class="text-center">
+      
+        Part of <a href="https://aggiemoms.org/">The Federation of Texas A&amp;M University Mothers’ Clubs</a>
+
+        <!-- Copyright -->
+        <p>&copy; <%= Date.today.year %> Parker County Aggie Moms' Club</p>
+     
+      </div>
+    
+    </footer>
+
+     <!-- back to top button -->
+     
+    <a id="bt" href="#">Back to Top</a>
+ 
+    <!-- Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    
+    /* gives scroll and fade animation to back to top button */
+    $(document).ready(function() {
+      buttonHandler();
+    });
+
+    function buttonHandler() {
+      pageOffset = 200;
+      fadeTime = 250;
+      var button = $('#bt');
+
+      if ($(this).scrollTop() < pageOffset) {
+        $(button).addClass('hidden');
+      }
+
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > pageOffset) {
+          $(button).fadeIn(fadeTime);
+          $(button).removeClass('hidden');
+        } else {
+        $(button).fadeOut(fadeTime);
+        }
+      });
+
+      $(button).click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, fadeTime);
+        return false;
+      })
+    };
+
+    </script>
+  </body>
+</html>
+
+

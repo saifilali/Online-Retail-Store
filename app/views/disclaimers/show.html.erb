@@ -1,0 +1,26 @@
+<% content_for :title do %>
+    <title>Viewing Disclaimer</title>
+<% end %>
+
+<div class='container'>
+
+  <p id="notice"><%= notice %></p>
+  
+  <h1>Viewing Disclaimer</h1>
+  
+  <p>
+    <strong>Message:</strong>
+    <%= @disclaimer.message %>
+  </p>
+  
+  <p>
+    <strong>Page:</strong>
+    <%= @disclaimer.page %>
+  </p>
+  
+  <hr>
+  
+  <%= link_to 'Edit', edit_disclaimer_path(@disclaimer), :class => 'btn btn-default' %> |
+  <%= link_to 'Back', disclaimers_path, :class => 'btn btn-default' %>
+
+</div>

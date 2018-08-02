@@ -20,3 +20,4 @@ log/
 coverage
 .generators
 .idea/
+.DS_Store
